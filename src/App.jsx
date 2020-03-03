@@ -24,11 +24,11 @@ const App = () => {
         <Navbar />
       </header>
       <section className="content container">
-        <ul>
+        {/* <ul>
           {data.map((employee) => (
             <li key={employee.id}>{employee.employee_name}</li>
           ))}
-        </ul>
+        </ul> */}
       </section>
     </div>
   );
