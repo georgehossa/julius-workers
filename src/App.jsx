@@ -9,9 +9,8 @@ const App = () => {
   useEffect(() => {
     const getEmployees = async () => {
       try {
-        const response = await axios.get('http://dummy.restapiexample.com/api/v1/employees');
+        const response = await axios.get('https://dummy.restapiexample.com/api/v1/employees');
         setData(response.data.data)
-        console.log(response.data.data);
       } catch (err) {
         console.log(err);
       }
