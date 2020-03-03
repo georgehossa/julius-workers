@@ -28,7 +28,10 @@ const App = () => {
       <header className="header">
         <Navbar />
       </header>
-      <section className="container mx-auto">
+      <section className="container mx-auto p-4 text-center text-4xl">
+        <h1 className="">Employees</h1>
+      </section>
+      <section className="bg-blue-100 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {data.map((employee) => (
             <Employee key={employee.id} name={employee.employee_name} age={employee.employee_age} salary={employee.employee_salary} avatar={employee.profile_image}/>
           ))}
