@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './components/Layout';
-import EmployeesList from './pages/EmployeesList';
-import NewEmployee from './pages/NewEmployee';
+import EmployeesList from './containers/EmployeesList';
+import NewEmployee from './containers/NewEmployee';
 
 const App = () => {
   return(
