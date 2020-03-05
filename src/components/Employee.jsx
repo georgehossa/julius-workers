@@ -1,13 +1,17 @@
 import React from 'react'
 import axios from 'axios';
 
-const Employee = (props) => {
-  const { id, name, age, salary, avatar } = props;
+const Employee = ({ id, name, age, salary, avatar, onDelete }) => {
+
   const handleDeleteEmploye = () => {
     axios.delete(`http://localhost:5000/employees/${id}`)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        onDelete();
+      })
       .catch(error => console.log(error))
   }
+
   return (
     <article className="bg-white rounded-lg shadow-lg p-4 grid grid-cols-2">
       <div className="mx-auto self-center rounded-full overflow-hidden h-22 w-22 flex items-center justify-center align-center">
