@@ -9,8 +9,8 @@ const EmployeesList = () => {
 
   const getEmployees = async () => {
     try {
-      const response = await axios.get('https://dummy.restapiexample.com/api/v1/employees');
-      const {data} = response.data;
+      const response = await axios.get('http://localhost:5000/employees/');
+      const {data} = response;
       setData(data);
       setErrors(false);
     } catch (err) {
@@ -21,12 +21,12 @@ const EmployeesList = () => {
 // GET List of employees
   useEffect(() => {
     getEmployees();
-  }, [])
+  }, [data])
 
   return (
     <section className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {data.map((employee) => (
-            <Employee key={employee.id} id={employee.id} name={employee.employee_name} age={employee.employee_age} salary={employee.employee_salary} avatar={employee.profile_image}/>
+            <Employee key={employee._id} id={employee._id} name={employee.name} age={employee.age} salary={employee.salary} avatar={employee.avatar}/>
           ))}
       </section>
   );
