@@ -5,21 +5,21 @@ let Employee = require('../models/employee.model');
 router.route('/').get((req,res) => {
   Employee.find()
     .then(employees => res.json(employees))
-    .catch(err => req.status(400).json('Error: ' + err));
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //GET AN EMPLOYEE
 router.route('/:id').get((req,res) => {
   Employee.findById(req.params.id)
     .then(employees => res.json(employees))
-    .catch(err => req.status(400).json('Error: ' + err));
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //DELETE AN EMPLOYEE
 router.route('/:id').delete((req,res) => {
   Employee.findByIdAndDelete(req.params.id)
     .then(() => res.json('Employee has deleted!!'))
-    .catch(err => req.status(400).json('Error: ' + err));
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //CREATE AN EMPLOYEE
